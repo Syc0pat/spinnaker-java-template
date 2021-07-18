@@ -1,0 +1,45 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd">
+
+        <servers>
+
+            <server>
+                <id>nexus-releases</id>
+                <username>admin</username>
+                <password>nexusadmin</password>
+            </server>
+
+            <server>
+                <id>nexus-snapshots</id>
+                <username>admin</username>
+                <password>nexusadmin</password>
+            </server>
+
+            <server>
+                <id>docker.io</id>
+                <username>syc0pat</username>
+                <password>syc0docker</password>
+            </server>
+
+        </servers>
+
+</settings>
+
+
+
+
+
+<!--<server>-->
+<!--    <id>${M2_SETTINGS_REPO_ID}</id>-->
+<!--    <username>${M2_SETTINGS_REPO_USERNAME}</username>-->
+<!--    <password>${M2_SETTINGS_REPO_PASSWORD}</password>-->
+<!--</server>-->
+<!--<server>-->
+<!--    <id>${DOCKER_SERVER_ID}</id>-->
+<!--    <username>${DOCKER_USERNAME}</username>-->
+<!--    <password>${DOCKER_PASSWORD}</password>-->
+<!--    <configuration>-->
+<!--        <email>${DOCKER_EMAIL}</email>-->
+<!--    </configuration>-->
+<!--</server>-->
