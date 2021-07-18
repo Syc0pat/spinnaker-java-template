@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: primary
-        image: index.docker.io/syc0pat/spinnaker-java-template
+        image: index.docker.io/syc0pat/spinnaker-java-template:0.0.1-SNAPSHOT
         ports:
         - containerPort: 9999
         readinessProbe:
