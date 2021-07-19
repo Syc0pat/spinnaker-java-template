@@ -32,11 +32,11 @@ spec:
       - name: primary
         image: index.docker.io/syc0pat/spinnaker-java-template:0.0.1-SNAPSHOT
         ports:
-        - containerPort: 9998
+        - containerPort: 9999
         readinessProbe:
           httpGet:
             path: /
-            port: 9998
+            port: 9999
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
@@ -54,4 +54,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 9998
+    targetPort: 9999
