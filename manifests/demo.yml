@@ -5,7 +5,6 @@ metadata:
   namespace: default
 data:
   NEW_FEATURE: "true"
-
 ---
 
 apiVersion: apps/v1beta2
@@ -43,7 +42,6 @@ spec:
             name: spinnaker-demo-config
 
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
