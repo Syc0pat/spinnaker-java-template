@@ -33,10 +33,10 @@ spec:
         image: index.docker.io/syc0pat/spinnaker-java-template:0.0.1-SNAPSHOT
         ports:
         - containerPort: 9999
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 9999
+#         readinessProbe:
+#           httpGet:
+#             path: /
+#             port: 9999
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
