@@ -7,8 +7,7 @@ data:
   NEW_FEATURE: "true"
 ---
 
-
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spinnaker-demo
@@ -41,10 +40,10 @@ spec:
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
-
 ---
-kind: Service
+
 apiVersion: v1
+kind: Service
 metadata:
   name: spinnaker-demo
   namespace: default
