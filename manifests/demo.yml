@@ -48,10 +48,12 @@ metadata:
   name: spinnaker-demo
   namespace: default
 spec:
+  type: NodePort
   selector:
     source: demo
     app: spinnaker
   ports:
   - protocol: TCP
+    nodePort: 30001
     port: 80
     targetPort: 9999
