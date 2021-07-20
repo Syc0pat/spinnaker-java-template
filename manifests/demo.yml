@@ -6,7 +6,6 @@ metadata:
 data:
   NEW_FEATURE: "true"
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
