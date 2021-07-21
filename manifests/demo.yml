@@ -6,7 +6,6 @@ metadata:
 data:
   NEW_FEATURE: "true"  
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -41,7 +40,6 @@ spec:
         - configMapRef:
             name: spinnaker-demo-config
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
