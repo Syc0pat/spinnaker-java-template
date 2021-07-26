@@ -4,9 +4,9 @@ metadata:
   name: spinnaker-demo-config
   namespace: default
 data:
-  NEW_FEATURE: "true"
+  NEW_FEATURE: "true"  
+  
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,10 +33,10 @@ spec:
         image: index.docker.io/syc0pat/spinnaker-java-template:0.0.1-SNAPSHOT
         ports:
         - containerPort: 9999
-#         readinessProbe:
-#           httpGet:
-#             path: /
-#             port: 9999
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 9999
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
@@ -48,10 +48,12 @@ metadata:
   name: spinnaker-demo
   namespace: default
 spec:
+  type: NodePort
   selector:
     source: demo
     app: spinnaker
   ports:
   - protocol: TCP
+    nodePort: 30001
     port: 80
     targetPort: 9999
