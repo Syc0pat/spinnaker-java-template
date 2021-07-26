@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>spinnaker-java-template</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.4</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -53,19 +53,56 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+			<!-- [ SKIP M2 REPO INSTALL MAVEN PLUGIN ] -->
+			<!--  same as running "-Dmaven.install.skip=true"  -->
+
+<!--			<plugin>-->
+<!--				<artifactId>maven-install-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<skip>true</skip>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+
 
 			<!-- [ SKIP NEXUS DEPLOY MAVEN PLUGIN ] -->
+			<!--  same as running "-Dmaven.deploy.skip=true"  -->
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-deploy-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<skip>true</skip>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 
+
+			<!-- [ ARTIFACTORY DEPLOY MAVEN PLUGIN ] -->
+<!--			<plugin>-->
+<!--				<groupId>org.jfrog.buildinfo</groupId>-->
+<!--				<artifactId>artifactory-maven-plugin</artifactId>-->
+<!--				<version>3.2.3</version>-->
+<!--				<inherited>false</inherited>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>build-info</id>-->
+<!--						<goals>-->
+<!--							<goal>publish</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--				<configuration>-->
+<!--					<publisher>-->
+<!--						<contextUrl>http://192.168.0.102:8081/artifactory</contextUrl>-->
+<!--						<username>admin</username>-->
+<!--						<password>Admin123</password>-->
+<!--						<repoKey>maven-release-local</repoKey>-->
+<!--						&lt;!&ndash;<snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>&ndash;&gt;-->
+<!--					</publisher>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 
 			<!-- [ SPOTIFY DOCKERFILE MAVEN PLUGIN ] -->
+			<!--	can be skipped by -Ddockerfile.skip=true	-->
 
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -97,3 +134,29 @@
 
 
 </project>
+
+
+
+
+
+
+<!-- Only run tests -->
+
+		<!--   mvn clean compile test	-->
+
+<!-- Only install to m2 repo -->
+
+		<!--   mvn clean compile package install -DskipTests=true	-->
+
+<!-- Only deploy to Nexus  -->
+
+		<!--   mvn clean compile package deploy -DskipTests=true -Dmaven.install.skip=true -Ddockerfile.skip  -->
+
+<!-- Only deploy to Artifactory -->
+
+		<!--  mvn clean compile package deploy -DskipTests=true -Dmaven.install.skip=true -Dmaven.deploy.skip=true -Ddockerfile.skip  -->
+
+<!-- Only deploy to DockerHub  -->
+
+		<!--   mvn clean compile package deploy -DskipTests=true -Dmaven.install.skip=true -Dmaven.deploy.skip=true  -->
+
