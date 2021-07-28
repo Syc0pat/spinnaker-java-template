@@ -6,7 +6,7 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build & Deploy') { 
             steps {
                 sh 'mvn clean compile package deploy -DskipTests=true -Dmaven.install.skip=true -Dmaven.deploy.skip=true' 
             }
