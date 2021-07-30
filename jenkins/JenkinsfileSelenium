@@ -68,12 +68,7 @@ pipeline {
 
 
 
-
-
-
-
-
-//TRY TO CONVERT INTO MATRIX FORMAT AS SHOWN BELOW -
+// ------ MATRIX FORMAT --------
 
 //stages {
 //  stage('Matrix Stage') {
@@ -120,12 +115,7 @@ pipeline {
 
 
 
-
-
-
-
-
-//   ----- XTRAS -----
+// ----- XTRAS -----
 
 //            script {
 //              def browsers = ['chrome', 'firefox']
