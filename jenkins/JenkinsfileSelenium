@@ -5,17 +5,20 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
+    environment {
+      FRONTEND-URL = 'http://192.xxx.xxx.xxx:8441'
+    }
     stages {
         stage('Maven Test Windows-Edge') {
           environment {
             BROWSER = 'edge'
             PLATFORM = 'windows'
             ARCHITECTURE = '64-bit' 					    
-            DRIVER-PATH = 'C:/SeleniumDrivers/edgedriver_win64/msedgedriver.exe'
+            DRIVER-PATH = 'C:/SeleniumDrivers/edgedriver_win64/msedgedriver.exe'            
           }
           steps {
             echo 'Performing Test on Win-64-Edge...'
-            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH}' -DdriverPath=${DRIVER-PATH}	
+            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH} -DdriverPath=${DRIVER-PATH} -DfrontendUrl=${FRONTEND-URL}'	
           }
         }
         stage('Maven Test Windows-Chrome') {
@@ -27,7 +30,7 @@ pipeline {
           }
           steps {
             echo 'Performing Test on Win-64-Chrome...'
-            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH}' -DdriverPath=${DRIVER-PATH}	
+            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH} -DdriverPath=${DRIVER-PATH} -DfrontendUrl=${FRONTEND-URL}'
           }
         }
         stage('Maven Test Windows-Firefox') {
@@ -39,7 +42,7 @@ pipeline {
           }
           steps {
             echo 'Performing Test on Win-64-Firefox...'
-            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH}' -DdriverPath=${DRIVER-PATH}	
+            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH} -DdriverPath=${DRIVER-PATH} -DfrontendUrl=${FRONTEND-URL}'
           }
         }
         stage('Maven Test Windows-Opera') {
@@ -51,7 +54,7 @@ pipeline {
           }
           steps {
             echo 'Performing Test on Win-64-Opera...'
-            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH}' -DdriverPath=${DRIVER-PATH}	
+            sh 'mvn clean compile test -Dbrowser=${BROWSER} -Dplatform=${PLATFORM} -Darchitecture=${ARCH} -DdriverPath=${DRIVER-PATH} -DfrontendUrl=${FRONTEND-URL}'
           }
         }
 //        ...
