@@ -76,40 +76,40 @@ pipeline {
 //  stage('Matrix Stage') {
 //	  matrix {
 //      axes {
-//	 	    axis {
+//	 	  axis {
 //          name 'PLATFORM'
-//	 		    values 'linux', 'mac', 'windows'
+//	 		values 'linux', 'mac', 'windows'
 //	      }
-//		    axis {
-//		      name 'BROWSER'
-//   	 	    values 'chrome', 'edge', 'firefox', 'opera',  'safari'
-//		    }
-//		    axis {
+//		  axis {
+//		    name 'BROWSER'
+//   	 	values 'chrome', 'edge', 'firefox', 'opera',  'safari'
+//		  }
+//		  axis {
 //	        name 'ARCHITECTURE'
-//			    values '32-bit', '64-bit'
-//		    }
+//			values '32-bit', '64-bit'
+//		  }
 //	    }
-//		  excludes {
-//		    exclude {
-//			    axis {
-//		        name 'ARCHITECTURE'
-//			      values '32-bit'
-//	   	 	  }
-//		    }  
+//		excludes {
+//		  exclude {
+//			axis {
+//		      name 'ARCHITECTURE'
+//			  values '32-bit'
+//	   	    }
+//		  }  
 //	    }
-//		  stages {
-//		    stage('Maven Test') {
-//			    agent {
-//				    docker {
-//				      image 'myregistry.com/${PLATFORM-BROWER-ARCHITECTURE}-image'
-//				      label '${PLATFORM-BROWER-ARCHITECTURE}'
-//				    }
-//			    }
-//	  		  steps {
+//		stages {
+//		  stage('Maven Test') {
+//			agent {
+//			  docker {
+//			    image 'myregistry.com/${PLATFORM-BROWER-ARCHITECTURE}-image'
+//			  	label '${PLATFORM-BROWER-ARCHITECTURE}'
+//			  }
+//			}
+//	  		steps {
 //            echo "Do Test for ${PLATFORM} - ${BROWSER} - ${ARCHITECTURE}"
 //            sh 'mvn clean compile test'
-//	     	  }
-//		    }
+//	     	}
+//		  }
 //	    }
 //	  }
 //	}	     
