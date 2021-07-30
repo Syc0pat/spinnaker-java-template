@@ -75,7 +75,7 @@ pipeline {
 // :: NOTE :: 
 // ADD THIS JENKINS-PIPELINE AS LAST STAGE TO THE 2nd PIPELINE OF YOUR SPINNAKER APPLICATION 
 // WHERE ( 1st - POLL_BUILD_UNIT-TEST_UPLOAD, 2nd - ARTFCT-REPO-TRGGR_BAKE_DEPLOY-TO-STAGING_E2E-TEST, 3rd - TEARDOWN-STAGING_DEPLOY-TO-PROD ) 
-
+// [[ AUTOMATED CANARY INTEGRATION POSSIBLE - look into https://cloud.google.com/architecture/automated-canary-analysis-kubernetes-engine-spinnaker ]]
 
 
 // ------ MATRIX FORMAT --------
