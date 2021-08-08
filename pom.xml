@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>spinnaker-java-template</artifactId>
-	<version>1.0.9</version>
+	<version>1.0.6</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -79,33 +79,34 @@
 
 
 			<!-- [ ARTIFACTORY DEPLOY MAVEN PLUGIN ] -->
-<!--			<plugin>-->
-<!--				<groupId>org.jfrog.buildinfo</groupId>-->
-<!--				<artifactId>artifactory-maven-plugin</artifactId>-->
-<!--				<version>3.2.3</version>-->
-<!--				<inherited>false</inherited>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<id>build-info</id>-->
-<!--						<goals>-->
-<!--							<goal>publish</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--				<configuration>-->
-<!--					<publisher>-->
-<!--						<contextUrl>http://192.168.0.102:8081/artifactory</contextUrl>-->
-<!--						<username>admin</username>-->
-<!--						<password>Admin123</password>-->
-<!--						<repoKey>maven-release-local</repoKey>-->
-<!--						&lt;!&ndash;<snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>&ndash;&gt;-->
-<!--					</publisher>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
+			<plugin>
+				<groupId>org.jfrog.buildinfo</groupId>
+				<artifactId>artifactory-maven-plugin</artifactId>
+				<version>3.2.3</version>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>build-info</id>
+						<goals>
+							<goal>publish</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<publisher>
+						<!-- <contextUrl>http://192.168.0.102:8081/artifactory</contextUrl> -->
+						<contextUrl>https://6275587f84b8aa.localhost.run/artifactory</contextUrl>
+						<username>admin</username>
+						<password>Admin123</password>
+						<repoKey>maven-release-local</repoKey>
+						<!-- <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey> -->
+					</publisher>
+				</configuration>
+			</plugin> 
+
 
 			<!-- [ SPOTIFY DOCKERFILE MAVEN PLUGIN ] -->
 			<!--	can be skipped by -Ddockerfile.skip=true	-->
-
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
