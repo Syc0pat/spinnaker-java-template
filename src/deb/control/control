@@ -1,0 +1,9 @@
+Package: spinnaker-java-template
+Version: 1.0.6
+Section: misc
+Priority: low
+Architecture: all
+Description: [[description]]
+Maintainer: Syco Pat <syc0pat@gmail.com>
+Depends: default-jre | java8-runtime
+
