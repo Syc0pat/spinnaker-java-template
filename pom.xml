@@ -95,7 +95,7 @@
 				<configuration>
 					<publisher>
 						<!-- <contextUrl>http://192.168.0.102:8081/artifactory</contextUrl> -->
-						<contextUrl>https://6275587f84b8aa.localhost.run/artifactory</contextUrl>
+						<contextUrl>https://66b8c8e15323d0.localhost.run/artifactory</contextUrl>
 						<username>admin</username>
 						<password>Admin123</password>
 						<repoKey>maven-release-local</repoKey>
