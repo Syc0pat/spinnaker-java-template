@@ -64,6 +64,20 @@
 <!--					<skip>true</skip>-->
 <!--				</configuration>-->
 <!--			</plugin>-->
+			
+			<plugin>
+                		<artifactId>jdeb</artifactId>
+                		<groupId>org.vafer</groupId>
+				<version>0.3</version>
+				<executions>
+				    <execution>
+					<phase>package</phase>
+					<goals>
+					    <goal>deb</goal>
+					</goals>
+				    </execution>
+				</executions>
+            		</plugin>
 
 
 			<!-- [ SKIP NEXUS DEPLOY MAVEN PLUGIN ] -->
