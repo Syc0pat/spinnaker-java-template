@@ -6,4 +6,3 @@ Architecture: all
 Description: [[description]]
 Maintainer: Syco Pat <syc0pat@gmail.com>
 Depends: default-jre | java8-runtime
-
